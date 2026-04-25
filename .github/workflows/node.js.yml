@@ -3,7 +3,7 @@ name: 🚀 Deploy Backend to Subdomain
 on:
   push:
     branches:
-      - main  # Triggers when you push to the main branch
+      - main
 
 jobs:
   web-deploy:
@@ -13,18 +13,11 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      # OPTIONAL: If your backend needs a build step (e.g., Node.js or Composer)
-      # - name: 🔨 Install Dependencies
-      #   run: |
-      #     npm install
-      #     npm run build
-
       - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          # Path on your server. For subdomains, this is usually 'epd.eyuniya.dev/' 
-          # or 'public_html/epd.eyuniya.dev/'. Check cPanel to be sure.
-          server-dir: epd.eyuniya.dev/
+          # Target the specific directory you mentioned
+          server-dir: eyuel-portfolio-backend.eyuniya.dev/
