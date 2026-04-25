@@ -30,6 +30,12 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({    
+    message: "Server is Running.",
+  });
+});
+
 // Proxy endpoint for downloading the PDF
 app.get("/api/download-cv", async (req, res) => {
   try {
@@ -100,7 +106,7 @@ app.post("/api/send-message", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001 ;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });
