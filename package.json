@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start-normally": "node server.js",
+    "dev": "nodemon server.js",
+    "start": "node --max-old-space-size=1024 server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fine-Guy-21/portfolio-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.15.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.1",
+    "express": "^5.2.1",
+    "node-telegram-bot-api": "^0.67.0",
+    "nodemailer": "^8.0.6",
+    "nodemon": "^3.1.14"
+  },
+  "bugs": {
+    "url": "https://github.com/Fine-Guy-21/portfolio-backend/issues"
+  },
+  "homepage": "https://github.com/Fine-Guy-21/portfolio-backend#readme"
+}
